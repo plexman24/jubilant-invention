@@ -1,0 +1,9 @@
+----------------------------------------------------
+	InitScript
+-Selects what scripts you want to run
+-Can be manipulated to run any script wanted
+-Ex.	0)All
+	1)One
+	2)Two
+	3)Three
+----------------------------------------------------

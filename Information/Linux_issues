@@ -1,0 +1,18 @@
+-Disable guest user
+-Remove unathorized users
+-Change user access
+	-Admins have admin access
+	-Users only have user access 
+-Apply secure passwords
+-Set max password age
+-Enable firewall
+	-UFW
+-Update software
+	-bash
+	-firefox
+	-LibreOffice
+-Remove prohibited software
+-SSH hardening
+	-SSH root login disabled
+?Antivirus
+
