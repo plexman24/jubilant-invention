@@ -1,9 +1,18 @@
-----------------------------------------------------
+-------------------------------------------------------
 	InitScript
 -Selects what scripts you want to run
+-Create dir /opt/scripts
 -Can be manipulated to run any script wanted
 -Ex.	0)All
 	1)One
 	2)Two
 	3)Three
-----------------------------------------------------
+-------------------------------------------------------
+	SSH Config
+-Save inital config to sshd_config.bak to /opt/scripts
+-remove and purge openssh-server
+-reinstall openssh-server
+-delete sshd_config
+-Download presecured config to sshd_config
+-restart ssh service
+-------------------------------------------------------
