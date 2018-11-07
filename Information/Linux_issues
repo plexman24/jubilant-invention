@@ -1,18 +1,42 @@
--Disable guest user
 -Remove unathorized users
+	-Remove guest user
 -Change user access
 	-Admins have admin access
-	-Users only have user access 
+	-Users only have user access
+	-/etc/sudoers.d only admins have sudo access
+	-/etc/passwd
+	-/etc/group remove non-admins from sudo and admin group 
 -Apply secure passwords
--Set max password age
+	-/etc/login.defs
+		-PASS_MIN_DAYS 7
+		-PASS_MAX_DAYS 90
+		-PASS_WARN_AGE 14
+	-/etc/pam.d/common-password
+		-append minlen=8 to line with pam_unix.so
+		-append remember=5 to line with pam_unix.so
+		-append ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-to line with pam.cracklib.so
+	-/etc/pam.d/common-auth
+		-append deny=5 unlock_time=1800 to line with pam_tally2.so
+	-chpasswd to help enforce new passwords
 -Enable firewall
 	-UFW
+	-cookie protection
+		-sysctl -n net.ipv4.tcp_syncookies
+	-disable ipv6
+		-sudo echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+	-disable IP forwarding 
+		-sudo echo 0 > /proc/sys/net/ipv4/ip_forward
+	-prevent IP spoofing
+		-sudo echo "nospoof on" >> /etc/host.conf
 -Update software
+	-enable automatic updates
+		-
 	-bash
 	-firefox
 	-LibreOffice
 -Remove prohibited software
 -SSH hardening
 	-SSH root login disabled
+-Secure ports
 ?Antivirus
 
