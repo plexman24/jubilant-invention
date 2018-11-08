@@ -19,9 +19,9 @@ echo""
 mkdir /opt/scripts
 cp /etc/ssh/sshd_config /opt/scripts/sshd_config.bak
 
-sudo apt remove openssh-server -y > /dev/null
-sudo apt purge openssh-server -y > /dev/null
-sudo apt install openssh-server -y > /dev/null
+sudo apt-get remove openssh-server -y > /dev/null
+sudo apt-get purge openssh-server -y > /dev/null
+sudo apt-get install openssh-server -y > /dev/null
 
 rm /etc/ssh/ssh_config
 
