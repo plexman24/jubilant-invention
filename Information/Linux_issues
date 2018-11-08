@@ -18,6 +18,8 @@
 	-/etc/pam.d/common-auth
 		-append deny=5 unlock_time=1800 to line with pam_tally2.so
 	-chpasswd to help enforce new passwords
+	-use generate random passwords for all users
+		-tr -dc A-Za-z0-9_ < /dev/urandom | head -c 16 | xargs
 -Enable firewall
 	-UFW
 	-cookie protection
@@ -37,6 +39,29 @@
 -Remove prohibited software
 -SSH hardening
 	-SSH root login disabled
+		-PermitRootLogin no
+	-Disable host-based authentication
+		HostBasedAuthentication no
+	-Change port number
+		-Port 4444
+	-Disconnected Idle Sessions
+		-ClientAliveInterval 300
+		-ClientAliveCountMax 2
+	-Disable X11Forwarding 
+		-X11Forwarding no
+	-Enable banner
+		-Banner /etc/issue.net
+		-/etc/issue.net
+	-Disable Rhosts
+		IgnoreRhosts yes
+	-Disable empty passwords
+		-PermitEmptyPasswords no
+	!!Whitelist users
+	?Generate a key pair
+		-ssh-keygen
+		-Disable password authentication
+			-PasswordAuthentication no
+	?Use port knocking
 -Secure ports
 ?Antivirus
 
