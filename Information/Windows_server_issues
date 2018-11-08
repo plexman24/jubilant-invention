@@ -3,4 +3,15 @@
 	-install-windowsfeature AD-Domain-Services
 -Importing the Required Moduels
 	-Install-ADDSForest
-
+-Commands to Promote Server as Domain Controller
+	-Add-ADDSReadOnlyDomainControllerAccount
+	-Install-ADDSDomain
+	-Install-ADDSDomainController
+	-Install-ADDSForest	
+	-Test-ADDSDomainControllerInstallation
+	-Test-ADDSDomainControllerUninstallation
+	-Test-ADDSDomainInstallation
+	-Test-ADDSForestInstallation
+	-Test-ADDSReadOnlyDomainControllAccountCreation
+	-Uninstall-ADDSDomainController
+-
