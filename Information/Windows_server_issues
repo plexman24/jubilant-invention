@@ -1,0 +1,6 @@
+-Get the AD service name 
+	-get-windowsfeature
+	-install-windowsfeature AD-Domain-Services
+-Importing the Required Moduels
+	-Install-ADDSForest
+
