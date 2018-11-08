@@ -16,9 +16,13 @@ echo "	░ ░     ░ ░      ░         ░  ░   ░                    �
 echo "	░       ░ ░           ░                                                                           "
 echo""
 
-mkdir /opt
 mkdir /opt/scripts
 cp /etc/ssh/sshd_config /opt/scripts/sshd_config.bak
-sudo apt remove openssh-server -y
-sudo apt purge openssh-server -y
-sudo apt install openssh-server -y
+
+sudo apt remove openssh-server -y > /dev/null
+sudo apt purge openssh-server -y > /dev/null
+sudo apt install openssh-server -y > /dev/null
+
+rm /etc/ssh/ssh_config
+
+
